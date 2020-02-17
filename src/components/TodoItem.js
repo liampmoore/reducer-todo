@@ -7,18 +7,34 @@ import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import { CardActionArea } from '@material-ui/core';
 
-const TodoItem = ({item, completed}) => {
+
+
+
+
+const TodoItem = ({item, completed, id, dispatch}) => {
+    const completedItemAction = () => {
+        dispatch({
+            type: 'COMPLETE',
+            payload: {
+                key: id
+            }
+        })
+    }
+    
     return (
-        <Card>
-            <CardContent>
-                <Typography variant='body1'>
+        <Card style={{marginBottom: '20px'}} className='fade-in'>
+            <CardActionArea onClick={() => {completedItemAction()}}>
+            <CardContent style={{padding: '20px'}}>
+                <Typography variant='body1' color={completed ? 'primary':''}>
                     {item}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button>{completed ? <CheckCircleIcon/> : 'Done?'}</Button>
+                <Button  color={completed ? 'primary' : 'default'}>Done</Button> {completed ? <CheckCircleIcon color='primary' /> : <></>}
             </CardActions>
+            </CardActionArea>
         </Card>
     )
 }
