@@ -1,12 +1,14 @@
-@-webkit-keyframes fadeIn { from { transform: translateY(10px); opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from {transform: translateY(10px); opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { transform: translateY(10px); opacity:0; } to { opacity:1; } }
+@-webkit-keyframes floatIn { from { transform: translateY(10px); opacity:0; } to { opacity:1; } }
+@-moz-keyframes floatIn { from {transform: translateY(10px); opacity:0; } to { opacity:1; } }
+@keyframes floatIn { from { transform: translateY(10px); opacity:0; } to { opacity:1; } }
 
-.fade-in {
+
+
+.float-in {
 	opacity:0;
-	-webkit-animation: fadeIn ease-in 1;
-	-moz-animation: fadeIn ease-in 1;
-	animation: fadeIn ease-in 1;
+	-webkit-animation: floatIn ease-in 1;
+	-moz-animation: floatIn ease-in 1;
+	animation: floatIn ease-in 1;
 
 	-webkit-animation-fill-mode: forwards;
 	-moz-animation-fill-mode: forwards;
@@ -15,4 +17,16 @@
 	-webkit-animation-duration: .2s;
 	-moz-animation-duration: .2s;
 	animation-duration: .2s;
+}
+
+.fade {
+  transition: opacity 1s ease;
+}
+
+.visible {
+  opacity: 1
+}
+
+.invisible {
+  opacity: 0
 }

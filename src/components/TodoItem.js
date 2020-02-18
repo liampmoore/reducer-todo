@@ -24,15 +24,15 @@ const TodoItem = ({item, completed, id, dispatch}) => {
     }
     
     return (
-        <Card style={{marginBottom: '20px'}} className='fade-in'>
+        <Card style={{marginBottom: '20px'}} className='float-in'>
             <CardActionArea onClick={() => {completedItemAction()}}>
             <CardContent style={{padding: '20px'}}>
-                <Typography variant='body1' color={completed ? 'primary':''}>
+                <Typography variant='body1'>
                     {item}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button  color={completed ? 'primary' : 'default'}>Done</Button> {completed ? <CheckCircleIcon color='primary' /> : <></>}
+                <Button  color={completed ? 'secondary' : 'default'}>Done</Button> <CheckCircleIcon className={completed ? 'fade visible':'fade invisible'} color='secondary' />
             </CardActions>
             </CardActionArea>
         </Card>
